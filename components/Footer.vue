@@ -15,7 +15,6 @@
       <p class="text-xs">Políticas de Privacidade</p>
     </div>
     <div class="div3">
-      <p class="font-bold text-pink-700 text-sm">Contato</p>
       <p class="text-xs flex"><img class="px-2 w-30 h-15" src="../public/icons/fb.png"> /getadopted</p>
       <p class="text-xs flex"><img class="px-2 w-30 h-15" src="../public/icons/inst.png"> @getadopted</p>
       <p class="text-xs flex"><img class="px-2 w-30 h-15" src="../public/icons/tw.png"> @getadopted</p>

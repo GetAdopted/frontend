@@ -33,10 +33,11 @@ export default {
 <style scoped>
 .container-grid {
 display: grid;
+justify-items: center;
 grid-template-columns: repeat(4, 0.5fr);
 grid-template-rows: repeat(3, 1fr);
-grid-column-gap: 8px;
-grid-row-gap: 8px;
+grid-column-gap: 14px;
+grid-row-gap: 14px;
 }
 
 .div1 { grid-area: 1 / 1 / 2 / 2; }
@@ -51,5 +52,4 @@ grid-row-gap: 8px;
 .div10 { grid-area: 3 / 2 / 4 / 3; }
 .div11 { grid-area: 3 / 3 / 4 / 4; }
 .div12 { grid-area: 3 / 4 / 4 / 5; }
-
 </style>

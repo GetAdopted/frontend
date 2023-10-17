@@ -1,5 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  modules: ['@nuxtjs/google-fonts'],
+  googleFonts: {
+    families: {
+      Poppins: true,
+      Lato: [100, 300, 600, 900],
+    }
+  },
   devtools: { enabled: true },
   app: {
     head: {
@@ -12,6 +19,4 @@ export default defineNuxtConfig({
   },
 
 })
-
-
 

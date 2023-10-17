@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col p-2 rounded overflow-hidden shadow-lg bg-pink-100">
-    <img
-      :src="img"
-    />
+  <div class="block max-w-[17rem] rounded-lg bg-white shadow dark:bg-neutral-700">
+    <div class="relative overflow-hidden bg-cover bg-no-repeat">
+      <img class="rounded-t-lg" :src="img" alt="" />
+    </div>
     <div class="m-2">
       <p class="font-bold text-base text-darkpurple">{{ name }}</p>
     </div>

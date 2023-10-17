@@ -4,7 +4,7 @@
     <Navbar></Navbar>
     <Banner :banner="banner" title="Bem-vindo ao nosso site de adoção de animais!" text="Nossa missão é clara e apaixonada: cuidar e encontrar lares amorosos para
       animais abandonados." :help="true"></Banner>
-    <Category></Category>
+    <Volunteer></Volunteer>
     <Partners></Partners>
     <Footer></Footer>
   </div>
@@ -22,9 +22,7 @@ export default {
 };
 </script>
 
-<style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
-
+<style>
 * {
   font-family: Poppins;
 }
