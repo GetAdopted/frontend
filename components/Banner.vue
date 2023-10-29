@@ -6,7 +6,8 @@
     <p class="text-base">{{ text }}</p>
 
     <div class="inline-flex mt-6" v-if="help === true">
-      <Button />
+      <Button myclass="bg-rosepurple-700 text-white font-regular py-2 px-4 mr-2 inline-flex rounded-md"
+      :icon="paw" title="Adote um pet"></Button>
 
       <ButtonOutline />
     </div>
@@ -14,6 +15,8 @@
 </template>
 
 <script>
+import paw from "../public/icons/paw.png";
+
 export default {
   props: {
     banner: {
@@ -32,6 +35,11 @@ export default {
       type: Boolean,
       required: true,
     }
+  },
+  data() {
+    return {
+      paw,
+    };
   },
 };
 </script>

@@ -1,14 +1,10 @@
 <template>
-  <div
-    class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl dark:border-gray-700 dark:bg-gray-800"
-  >
-    <img
-      class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-      :src="img"
-    />
-
-    <div class="flex flex-col justify-between p-4 leading-normal">
-      <h1 class="font-bold mt-4 mb-4 text-lg">{{ name }}</h1>
+  <div class="flex justify-center mt-2 mb-6">
+    <div class="flex">
+      <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" :src="img"/>
+    </div>
+    <div v-if="true" class="flex flex-col w-35 justify-between px-8 py-2 leading-normal bg-gray-100">
+      <h1 class="font-bold mb-4 text-lg">{{ name }}</h1>
       <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
         {{ description }}
       </p>
@@ -17,7 +13,7 @@
         <h1 class="font-bold mt-4 mb-4 text-base">
           PRINCIPAIS CARACTERÍSTICAS
         </h1>
-        <div class="grid grid-cols-2 grid-gap-3 gap-y-6 items-center">
+        <div class="grid grid-cols-2 grid-gap-3 gap-y-6 justify-items-start">
           <p class="text-sm flex justify-center items-end">
             <img
               class="px-2 w-30 h-15"
@@ -59,11 +55,23 @@
           </p>
         </div>
       </div>
+      <div class="mt-8">
+        <Button myclass="bg-rosepurple-700 inline-flex text-white font-regular py-2 px-4 mr-2 rounded-md" :icon="paw" title="Adotar"></Button>
+      </div>
+    </div>
+    <div v-if="false" class="flex flex-col w-35 justify-between px-8 py-2 leading-normal bg-gray-100">
+      <h1 class="font-bold mb-4 text-lg">Parabéns</h1>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        Sua adoção foi feita com sucesso!
+      </p>
     </div>
   </div>
+  
 </template>
 
 <script>
+import paw from "../public/icons/paw.png";
+
 export default {
   props: {
     img: {
@@ -103,5 +111,22 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      paw,
+    };
+  },
 };
+
 </script>
+
+<style scoped>
+.w-35 {
+  width: 35%;
+}
+
+.justify-items-start {
+  justify-items: start;
+}
+
+</style>

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!--<NuxtLink to="/about">Sobre</NuxtLink>-->
     <Navbar></Navbar>
     <Banner :banner="banner" title="Bem-vindo ao nosso site de adoção de animais!" text="Nossa missão é clara e apaixonada: cuidar e encontrar lares amorosos para
       animais abandonados." :help="true"></Banner>

@@ -1,75 +1,106 @@
-# Nuxt 3 Minimal Starter
+## GetAdopted
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+GetAdopted é uma aplicação que visa conectar organizações de proteção animal (ONGs) a pessoas interessadas em adotar animais de estimação. Esta plataforma foi desenvolvida usando as tecnologias Nuxt.js para o front-end e Laravel para o back-end.
 
-## Setup
+Requisitos
+Antes de começar a configurar e executar o projeto GetAdopted, certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 
-Make sure to install the dependencies:
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [NPM](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
+- [Composer](https://getcomposer.org/)
+- [PHP](https://www.php.net/) (v7.3 or higher)
+- [MySQL](https://www.mysql.com/) or another compatible database management system
+- [Git](https://git-scm.com/)
+
+### Configuração do Front-End (Nuxt.js)
+
+Clone o repositório do projeto para o seu sistema local:
 
 ```bash
-# npm
+Copy code
+git clone https://seu-repositorio.git
+```
+
+Acesse o diretório do front-end:
+
+```bash
+Copy code
+cd GetAdopted/front-end
+```
+
+Instale as dependências do front-end:
+
+```bash
+Copy code
 npm install
 
-# pnpm
-pnpm install
+# ou
 
-# yarn
 yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+Crie um arquivo .env na raiz do diretório do front-end para configurar as variáveis de ambiente. Você pode se basear em um arquivo .env.example existente.
 
-Start the development server on `http://localhost:3000`:
+Inicie o servidor de desenvolvimento do Nuxt.js:
 
 ```bash
-# npm
+Copy code
 npm run dev
 
-# pnpm
-pnpm run dev
+# ou
 
-# yarn
 yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+O front-end estará acessível em http://localhost:3000.
 
-Build the application for production:
+Configuração do Back-End (Laravel)
+Acesse o diretório do back-end:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+Copy code
+cd GetAdopted/back-end
 ```
 
-Locally preview production build:
+Instale as dependências do back-end usando o Composer:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+Copy code
+composer install
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Crie um arquivo .env na raiz do diretório do back-end para configurar as variáveis de ambiente. Você pode se basear em um arquivo .env.example existente.
+
+Gere uma chave de aplicativo:
+
+```bash
+Copy code
+php artisan key:generate
+```
+
+Execute as migrações para criar as tabelas do banco de dados:
+
+```bash
+Copy code
+php artisan migrate
+```
+
+Inicie o servidor Laravel:
+
+```bash
+Copy code
+php artisan serve
+```
+
+O back-end estará acessível em http://localhost:8000.
+
+Uso da Aplicação
+Acesse a aplicação no seu navegador em http://localhost:3000 para começar a explorar e usar o GetAdopted. As ONGs podem cadastrar animais disponíveis para adoção, e os interessados podem buscar e entrar em contato com as ONGs.
+
+Certifique-se de configurar corretamente as variáveis de ambiente, como chaves de API, configurações de banco de dados e outras informações sensíveis em ambos os ambientes (front-end e back-end) para garantir o funcionamento adequado da aplicação.
+
+Para implantar a aplicação em um ambiente de produção, consulte a documentação específica para implantação de projetos Nuxt.js e Laravel em servidores web adequados.
+
+Este é um guia básico de como configurar e executar o projeto GetAdopted em seu ambiente de desenvolvimento local. Certifique-se de revisar a documentação oficial do Nuxt.js e do Laravel para obter informações detalhadas sobre como implantar a aplicação em um ambiente de produção.
+
+Divirta-se usando o GetAdopted e contribua para a causa da adoção responsável de animais de estimação!

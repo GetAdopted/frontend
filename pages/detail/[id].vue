@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="flex items-center w-full justify-center py-8 mt-8">
+    <div class="flex items-center w-full justify-center py-8">
       <h1 class="font-bold text-2xl">Conheça melhor o animalzinho escolhido</h1>
     </div>
     <AnimalDetail
