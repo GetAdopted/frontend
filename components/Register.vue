@@ -10,9 +10,9 @@
       <Radio title="Castrado?" option1="Sim" option2="Não"></Radio>
       <Radio title="Vacinas em dia?" option1="Sim" option2="Não"></Radio>
       <Radio title="Qual o gênero?" option1="Macho" option2="Fêmea"></Radio>
-      <Select title="Qual a raça do animal?" value1="Buldogue" value2="Golden Retriever" value3="Poodle" value4="Labrador" value5="Pastor Alemão" value6="Siamês" value7="Maine Coon" value8="Angorá" value9="Azul Russo" value10="SDR"></Select>
-      <Select title="Qual idade aproximada do seu animalzinho?" value1="0-3 meses" value2="4-6 meses" value3="7-9 meses" value4="10 meses a 1 ano" value5="1-3 anos" value6="3-5 anos" value7="5-7 anos" value8="7-9 anos" value9="9-12 anos" value10="12 anos ou mais"></Select>
-      <Select title="Que adjetivo define seu animalzinho?" value1="Fofo" value2="Brincalhão" value3="Tímido" value4="Curioso" value5="Energético" value6="Peludo" value7="Manso" value8="Dócil" value9="Calmo" value10="Meigo"></Select>
+      <Select title="Qual a raça do animal?" :collection="provider.races"></Select>
+      <Select title="Qual idade aproximada do seu animalzinho?" :collection="provider.ages"></Select>
+      <Select title="Que adjetivo define seu animalzinho?" :collection="provider.adjectives"></Select>
 
       <Button myclass="bg-rosepurple-700 text-white font-regular py-2 px-4 mr-2 rounded-md" title="Cadastrar"></Button>
     </form>
@@ -22,10 +22,19 @@
 <script>
 import paw from "../public/icons/icon_breed.png";
 
+const adjectives = ["Fofo", "Brincalhão", "Tímido", "Curioso", "Energético", "Peludo", "Manso", "Dócil", "Calmo", "Meigo"];
+const ages = ["0-3 meses", "4-6 meses", "7-9 meses", "10 meses a 1 ano", "1-3 anos", "3-5 anos", "5-7 anos", "7-9 anos", "9-12 anos", "12 anos ou mais"];
+const races = ["Buldogue", "Golden Retriever", "Poodle", "Labrador", "Pastor Alemão", "Siamês", "Maine Coon", "Angorá", "Azul Russo", "SDR"];
+
 export default {
   data() {
     return {
       paw,
+      provider: {
+        adjectives,
+        ages,
+        races,
+      },
     };
   },
 };
