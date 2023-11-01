@@ -1,5 +1,14 @@
 <template>
-  <div class="block max-w-[17rem] rounded-lg bg-white shadow dark:bg-neutral-700">
+  <div v-if="isLogged() === true" class="close">
+    <img
+      @click.prevent="deleteAnimal(id)"
+      src="../public/icons/close.png"
+      alt=""
+    />
+  </div>
+  <div
+    class="block max-w-[17rem] rounded-lg bg-white shadow dark:bg-neutral-700"
+  >
     <div class="relative overflow-hidden bg-cover bg-no-repeat">
       <img class="rounded-t-lg" :src="img" alt="" />
     </div>
@@ -25,6 +34,10 @@
 <script>
 export default {
   props: {
+    id: {
+      type: Number,
+      required: true,
+    },
     img: {
       type: String,
       required: true,
@@ -46,11 +59,32 @@ export default {
       required: true,
     },
   },
+  methods: {
+    isLogged() {
+      return localStorage.getItem("token") ? true : false;
+    },
+    deleteAnimal(id) {
+      const confirmation = confirm("Você deseja excluir esse registro?");
+      
+      if (confirmation) {
+        this.$axios.delete(`/animals/${id}`);
+
+        window.location.reload();
+      }
+    },
+  },
 };
 </script>
 
 <style scoped>
 .text-darkpurple {
   color: #730145;
+}
+
+.close {
+  position: relative;
+  top: 35px;
+  z-index: 1;
+  left: 240px;
 }
 </style>

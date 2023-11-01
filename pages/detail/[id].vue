@@ -4,14 +4,14 @@
       <h1 class="font-bold text-2xl">Conheça melhor o animalzinho escolhido</h1>
     </div>
     <AnimalDetail
-      :img="animal.img"
+      :image="animal.image"
       :name="animal.name"
       :description="animal.description"
-      :neutered="animal.neutered"
+      :is_castrated="animal.is_castrated"
       :gender="animal.gender"
-      :vaccines_up_to_date="animal.vaccines_up_to_date"
+      :is_vaccinated="animal.is_vaccinated"
       :age="animal.age"
-      :breed="animal.breed"
+      :race="animal.race"
       :adjective="animal.adjective"
 
     ></AnimalDetail>

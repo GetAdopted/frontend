@@ -5,7 +5,7 @@
       <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
           <img class="w-5" :src="icon" alt="">
       </div>
-      <input type="text" id="input-group" class="bg-gray-50 border text-gray-900 focus:outline-purple-500 text-sm rounded-lg block w-full pl-10 p-2.5" :placeholder="placeholder">
+      <input :type="typeface" @change="change" v-model="value" class="bg-gray-50 border text-gray-900 focus:outline-purple-500 text-sm rounded-lg block w-full pl-10 p-2.5" :placeholder="placeholder">
     </div>
   </div>
 </template>
@@ -13,6 +13,11 @@
 <script>
 
 export default {
+  data() {
+    return {
+      value: ""
+    }
+  },
   props: {
     title: {
       type: String,
@@ -25,8 +30,22 @@ export default {
     icon: {
       type: String,
       required: true,
+    },
+    lead: {
+      type: String,
+      required: true,
+    },
+    typeface: {
+      type: String,
+      required: false,
+      default: "text"
     }
   },
+  methods: {
+    change(){
+      this.$emit("change", {key: this.lead, value: this.value});
+    }
+  }
 }
 </script>
 
